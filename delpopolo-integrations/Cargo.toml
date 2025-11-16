@@ -1,0 +1,21 @@
+[package]
+name = "delpopolo-integrations"
+version.workspace = true
+edition.workspace = true
+authors.workspace = true
+license.workspace = true
+
+[dependencies]
+delpopolo-core = { path = "../delpopolo-core" }
+delpopolo-domain = { path = "../delpopolo-domain" }
+
+tokio = { workspace = true }
+async-trait = { workspace = true }
+serde = { workspace = true }
+serde_json = { workspace = true }
+reqwest = { workspace = true }
+uuid = { workspace = true }
+chrono = { workspace = true }
+thiserror = { workspace = true }
+tracing = { workspace = true }
+base64 = { workspace = true }

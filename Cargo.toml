@@ -1,0 +1,108 @@
+[workspace]
+members = [
+    "delpopolo-core",
+    "delpopolo-domain",
+    "delpopolo-infrastructure",
+    "delpopolo-api",
+    "delpopolo-integrations",
+    "delpopolo-chatbot",
+    "delpopolo-inventory",
+    "delpopolo-nfe",
+    "delpopolo-notifications",
+    "delpopolo-suppliers",
+    "delpopolo-marketing",
+    "delpopolo-pos",
+    "delpopolo-payments",
+    "delpopolo-turnstile",
+    "delpopolo-web",
+    "delpopolo-workers",
+]
+resolver = "2"
+
+[workspace.package]
+version = "0.1.0"
+edition = "2021"
+authors = ["Avila Framework <avilaops@avila.inc>"]
+license = "MIT"
+repository = "https://github.com/avilaops/panificadora"
+
+[workspace.dependencies]
+# Core async runtime
+tokio = { version = "1.40", features = ["full"] }
+async-trait = "0.1"
+
+# Web framework
+actix-web = "4.9"
+actix-cors = "0.7"
+actix-rt = "2.10"
+
+# Serialization
+serde = { version = "1.0", features = ["derive"] }
+serde_json = "1.0"
+
+# Database
+sqlx = { version = "0.8", features = ["runtime-tokio-native-tls", "postgres", "chrono", "uuid", "json"] }
+redis = { version = "0.26", features = ["tokio-comp", "connection-manager"] }
+
+# Authentication & Security
+jsonwebtoken = "9.3"
+argon2 = "0.5"
+uuid = { version = "1.10", features = ["v4", "serde"] }
+
+# HTTP Client
+reqwest = { version = "0.12", features = ["json", "multipart"] }
+
+# Logging & Tracing
+tracing = "0.1"
+tracing-subscriber = { version = "0.3", features = ["env-filter"] }
+tracing-actix-web = "0.7"
+
+# Error handling
+anyhow = "1.0"
+thiserror = "1.0"
+
+# DateTime
+chrono = { version = "0.4", features = ["serde"] }
+
+# WebAssembly
+wasm-bindgen = "0.2"
+yew = { version = "0.21", features = ["csr"] }
+gloo = "0.11"
+wasm-bindgen-futures = "0.4"
+web-sys = "0.3"
+
+# Config
+config = "0.14"
+dotenvy = "0.15"
+
+# Validation
+validator = { version = "0.18", features = ["derive"] }
+
+# Cryptography
+ring = "0.17"
+base64 = "0.22"
+
+# Message Queue
+lapin = "2.3"
+
+# Templating for emails
+tera = "1.20"
+
+# XML parsing for NF-e
+quick-xml = { version = "0.36", features = ["serialize"] }
+
+# Image processing
+image = "0.25"
+
+# Testing
+mockall = "0.13"
+
+[profile.release]
+opt-level = 3
+lto = true
+codegen-units = 1
+strip = true
+
+[profile.dev]
+opt-level = 0
+debug = true
