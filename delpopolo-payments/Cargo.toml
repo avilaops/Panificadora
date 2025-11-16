@@ -1,0 +1,13 @@
+[package]
+name = "delpopolo-payments"
+version.workspace = true
+edition.workspace = true
+authors.workspace = true
+license.workspace = true
+
+[dependencies]
+delpopolo-core = { path = "../delpopolo-core" }
+delpopolo-domain = { path = "../delpopolo-domain" }
+
+serde = { workspace = true }
+uuid = { workspace = true }
