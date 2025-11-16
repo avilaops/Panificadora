@@ -1,6 +1,10 @@
+pub mod traits;
 pub mod error;
 pub mod result;
-pub mod traits;
 
-pub use error::CoreError;
-pub use result::CoreResult;
+#[cfg(test)]
+mod tests;
+
+pub use traits::*;
+pub use error::*;
+pub use result::*;

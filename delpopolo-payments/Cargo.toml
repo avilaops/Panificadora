@@ -9,5 +9,13 @@ license.workspace = true
 delpopolo-core = { path = "../delpopolo-core" }
 delpopolo-domain = { path = "../delpopolo-domain" }
 
+tokio = { workspace = true }
+reqwest = { workspace = true }
 serde = { workspace = true }
+serde_json = { workspace = true }
 uuid = { workspace = true }
+chrono = { workspace = true }
+anyhow = { workspace = true }
+thiserror = { workspace = true }
+tracing = { workspace = true }
+base64 = { workspace = true }

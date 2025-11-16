@@ -9,10 +9,12 @@ license.workspace = true
 crate-type = ["cdylib", "rlib"]
 
 [dependencies]
-wasm-bindgen = { workspace = true }
 yew = { workspace = true }
+yew-router = "0.18"
 gloo = { workspace = true }
+wasm-bindgen = { workspace = true }
 wasm-bindgen-futures = { workspace = true }
-web-sys = { workspace = true }
+web-sys = { workspace = true, features = ["Window", "Document", "HtmlElement"] }
 serde = { workspace = true }
 serde_json = { workspace = true }
+gloo-net = "0.6"
