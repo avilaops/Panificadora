@@ -15,7 +15,7 @@ pub struct Payment {
     pub payment_method: PaymentMethod,
     pub status: PaymentStatus,
     
-    // Para cartões
+    // Para cartï¿½es
     pub card_last_digits: Option<String>,
     pub card_brand: Option<String>,
     pub authorization_code: Option<String>,
@@ -26,7 +26,7 @@ pub struct Payment {
     pub pix_qr_code: Option<String>,
     pub pix_txid: Option<String>,
     
-    // Para integrações com POS (Stone, Cielo, etc)
+    // Para integraï¿½ï¿½es com POS (Stone, Cielo, etc)
     pub pos_transaction_id: Option<String>,
     pub pos_terminal_id: Option<String>,
     

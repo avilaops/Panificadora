@@ -1,38 +1,46 @@
-use sqlx::{PgPool, postgres::PgPoolOptions};
-use std::time::Duration;
+use sqlx::sqlite::SqlitePool;
 use anyhow::Result;
+use tracing::{info, error};
 
 #[derive(Clone)]
 pub struct Database {
-    pool: PgPool,
+    pool: SqlitePool,
 }
 
 impl Database {
     pub async fn new(database_url: &str) -> Result<Self> {
-        let pool = PgPoolOptions::new()
-            .max_connections(50)
-            .acquire_timeout(Duration::from_secs(3))
-            .connect(database_url)
-            .await?;
+        info!("Connecting to SQLite database: {}", database_url);
+        
+        let pool = SqlitePool::connect(database_url).await?;
+        
+        info!("Successfully connected to SQLite database");
         
         Ok(Self { pool })
     }
     
-    pub fn pool(&self) -> &PgPool {
-        &self.pool
-    }
-    
     pub async fn run_migrations(&self) -> Result<()> {
+        info!("Running database migrations");
+        
         sqlx::migrate!("./migrations")
             .run(&self.pool)
             .await?;
+        
+        info!("Migrations completed successfully");
         Ok(())
     }
     
-    pub async fn health_check(&self) -> Result<()> {
+    pub fn pool(&self) -> &SqlitePool {
+        &self.pool
+    }
+    
+    pub async fn health_check(&self) -> Result<bool> {
         sqlx::query("SELECT 1")
-            .execute(&self.pool)
-            .await?;
-        Ok(())
+            .fetch_one(&self.pool)
+            .await
+            .map(|_| true)
+            .map_err(|e| {
+                error!("Database health check failed: {}", e);
+                anyhow::anyhow!("Database unhealthy")
+            })
     }
 }

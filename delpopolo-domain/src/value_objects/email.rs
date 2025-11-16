@@ -7,12 +7,12 @@ pub struct Email(String);
 impl Email {
     pub fn new(email: String) -> Result<Self, String> {
         if !email.contains('@') || !email.contains('.') {
-            return Err("Email inválido".to_string());
+            return Err("Email invï¿½lido".to_string());
         }
         
         let parts: Vec<&str> = email.split('@').collect();
         if parts.len() != 2 || parts[0].is_empty() || parts[1].is_empty() {
-            return Err("Email inválido".to_string());
+            return Err("Email invï¿½lido".to_string());
         }
         
         Ok(Self(email.to_lowercase()))

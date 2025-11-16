@@ -9,7 +9,7 @@ impl Phone {
         let cleaned = phone.chars().filter(|c| c.is_numeric()).collect::<String>();
         
         if cleaned.len() < 10 || cleaned.len() > 11 {
-            return Err("Telefone deve ter 10 ou 11 dígitos".to_string());
+            return Err("Telefone deve ter 10 ou 11 dï¿½gitos".to_string());
         }
         
         Ok(Self(cleaned))

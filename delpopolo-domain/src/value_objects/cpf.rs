@@ -9,11 +9,11 @@ impl Cpf {
         let cleaned = cpf.chars().filter(|c| c.is_numeric()).collect::<String>();
         
         if cleaned.len() != 11 {
-            return Err("CPF deve ter 11 dígitos".to_string());
+            return Err("CPF deve ter 11 dï¿½gitos".to_string());
         }
         
         if !Self::validate(&cleaned) {
-            return Err("CPF inválido".to_string());
+            return Err("CPF invï¿½lido".to_string());
         }
         
         Ok(Self(cleaned))

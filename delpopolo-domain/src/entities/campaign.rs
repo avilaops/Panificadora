@@ -35,19 +35,19 @@ pub struct Campaign {
     // Regras da campanha
     pub rules: Option<CampaignRule>,
     
-    // Segmentação de público
+    // Segmentaï¿½ï¿½o de pï¿½blico
     pub target_all_customers: bool,
     pub target_customer_ids: Option<Vec<Uuid>>,
     pub target_vip_only: bool,
     pub target_new_customers: bool,
     
-    // Conteúdo da mensagem
+    // Conteï¿½do da mensagem
     pub message_template: String,
     pub image_url: Option<String>,
     pub cta_text: Option<String>,
     pub cta_url: Option<String>,
     
-    // Métricas
+    // Mï¿½tricas
     pub total_sent: i32,
     pub total_delivered: i32,
     pub total_opened: i32,

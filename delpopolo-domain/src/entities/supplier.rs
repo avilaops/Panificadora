@@ -40,18 +40,18 @@ pub struct Supplier {
     pub is_active: bool,
     pub is_preferred: bool,
     
-    // Catálogo de produtos do fornecedor
+    // Catï¿½logo de produtos do fornecedor
     pub products: Vec<SupplierProduct>,
     
-    // Dados de integração via API
+    // Dados de integraï¿½ï¿½o via API
     pub api_url: Option<String>,
     pub api_key: Option<String>,
     
-    // Dados de integração via Excel
+    // Dados de integraï¿½ï¿½o via Excel
     pub excel_catalog_url: Option<String>,
     pub excel_last_sync: Option<DateTime<Utc>>,
     
-    // Métricas de qualidade
+    // Mï¿½tricas de qualidade
     pub rating: Option<f32>,
     pub total_orders: i32,
     pub on_time_delivery_rate: Option<f32>,

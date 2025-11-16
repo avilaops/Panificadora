@@ -20,7 +20,7 @@ pub enum UnitOfMeasure {
     Gram,      // g
     Liter,     // l
     Milliliter, // ml
-    Dozen,     // dúzia
+    Dozen,     // dï¿½zia
     Package,   // pacote
 }
 
@@ -69,20 +69,20 @@ pub enum PaymentStatus {
 pub enum MovementType {
     Purchase,      // Compra de fornecedor
     Sale,          // Venda para cliente
-    Adjustment,    // Ajuste de inventário
+    Adjustment,    // Ajuste de inventï¿½rio
     Loss,          // Perda/quebra
-    Return,        // Devolução
-    Transfer,      // Transferência entre estoques
+    Return,        // Devoluï¿½ï¿½o
+    Transfer,      // Transferï¿½ncia entre estoques
 }
 
 #[derive(Debug, Clone, Copy, PartialEq, Eq, Serialize, Deserialize)]
 pub enum CampaignType {
-    Promotional,   // Promoção
+    Promotional,   // Promoï¿½ï¿½o
     Seasonal,      // Sazonal (dia da pizza, natal, etc)
-    FreshBread,    // Pão quentinho
-    Birthday,      // Aniversário
+    FreshBread,    // Pï¿½o quentinho
+    Birthday,      // Aniversï¿½rio
     Welcome,       // Boas vindas
-    Reactivation,  // Reativação de cliente inativo
+    Reactivation,  // Reativaï¿½ï¿½o de cliente inativo
     ThankYou,      // Agradecimento
     Newsletter,    // Newsletter
 }

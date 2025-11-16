@@ -25,12 +25,12 @@ pub struct Customer {
     pub is_active: bool,
     pub accepts_marketing: bool,
     
-    // Gamificação e fidelidade
+    // Gamificaï¿½ï¿½o e fidelidade
     pub loyalty_points: i32,
     pub total_orders: i32,
     pub total_spent: f64,
     
-    // Preferências
+    // Preferï¿½ncias
     pub favorite_products: Vec<Uuid>,
     pub dietary_restrictions: Vec<String>,
     
@@ -38,7 +38,7 @@ pub struct Customer {
     pub whatsapp_optin: bool,
     pub whatsapp_number: Option<String>,
     
-    // Notificações push
+    // Notificaï¿½ï¿½es push
     pub fcm_token: Option<String>,
     
     pub last_order_at: Option<DateTime<Utc>>,

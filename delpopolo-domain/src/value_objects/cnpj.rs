@@ -9,11 +9,11 @@ impl Cnpj {
         let cleaned = cnpj.chars().filter(|c| c.is_numeric()).collect::<String>();
         
         if cleaned.len() != 14 {
-            return Err("CNPJ deve ter 14 dígitos".to_string());
+            return Err("CNPJ deve ter 14 dï¿½gitos".to_string());
         }
         
         if !Self::validate(&cleaned) {
-            return Err("CNPJ inválido".to_string());
+            return Err("CNPJ invï¿½lido".to_string());
         }
         
         Ok(Self(cleaned))

@@ -93,7 +93,7 @@ pub struct InventoryMovement {
     pub unit_cost: Option<f64>,
     pub total_cost: Option<f64>,
     
-    // Referências
+    // Referï¿½ncias
     pub order_id: Option<Uuid>,
     pub supplier_id: Option<Uuid>,
     pub nfe_key: Option<String>, // Chave da NFe quando for entrada por nota fiscal
