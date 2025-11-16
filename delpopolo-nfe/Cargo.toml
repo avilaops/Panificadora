@@ -1,0 +1,19 @@
+[package]
+name = "delpopolo-nfe"
+version.workspace = true
+edition.workspace = true
+authors.workspace = true
+license.workspace = true
+
+[dependencies]
+delpopolo-core = { path = "../delpopolo-core" }
+delpopolo-domain = { path = "../delpopolo-domain" }
+
+serde = { workspace = true }
+serde_json = { workspace = true }
+quick-xml = { workspace = true }
+thiserror = { workspace = true }
+anyhow = { workspace = true }
+chrono = { workspace = true }
+uuid = { workspace = true }
+tracing = { workspace = true }
