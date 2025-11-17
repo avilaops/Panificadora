@@ -1,7 +1,6 @@
 use chrono::{DateTime, Utc};
 use serde::{Deserialize, Serialize};
 use uuid::Uuid;
-use validator::Validate;
 use delpopolo_core::traits::Entity;
 use crate::enums::{CampaignType, CampaignStatus, CampaignChannel};
 
@@ -15,14 +14,12 @@ pub struct CampaignRule {
     pub free_product_id: Option<Uuid>,
 }
 
-#[derive(Debug, Clone, Serialize, Deserialize, Validate)]
+#[derive(Debug, Clone, Serialize, Deserialize)]
 pub struct Campaign {
     pub id: Uuid,
     
-    #[validate(length(min = 1, max = 255))]
     pub name: String,
     
-    #[validate(length(max = 2000))]
     pub description: Option<String>,
     
     pub campaign_type: CampaignType,

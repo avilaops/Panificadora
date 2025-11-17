@@ -1,20 +1,17 @@
 use chrono::{DateTime, Utc};
 use serde::{Deserialize, Serialize};
 use uuid::Uuid;
-use validator::Validate;
 use delpopolo_core::traits::Entity;
 use crate::value_objects::{Cpf, Email, Phone, Address};
 
-#[derive(Debug, Clone, Serialize, Deserialize, Validate)]
+#[derive(Debug, Clone, Serialize, Deserialize)]
 pub struct Customer {
     pub id: Uuid,
     
-    #[validate(length(min = 1, max = 255))]
     pub name: String,
     
     pub cpf: Cpf,
     
-    #[validate(email)]
     pub email: Option<Email>,
     
     pub phone: Option<Phone>,
