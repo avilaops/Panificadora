@@ -1,26 +1,17 @@
 use chrono::{DateTime, Utc};
 use serde::{Deserialize, Serialize};
 use uuid::Uuid;
-use validator::Validate;
 use delpopolo_core::traits::Entity;
 use crate::enums::UserRole;
 
-#[derive(Debug, Clone, Serialize, Deserialize, Validate)]
+#[derive(Debug, Clone, Serialize, Deserialize)]
 pub struct User {
     pub id: Uuid,
-    
-    #[validate(length(min = 1, max = 255))]
     pub name: String,
-    
-    #[validate(email)]
     pub email: String,
-    
-    #[validate(length(min = 8))]
     pub password_hash: String,
-    
     pub role: UserRole,
     pub is_active: bool,
-    
     pub last_login_at: Option<DateTime<Utc>>,
     pub created_at: DateTime<Utc>,
     pub updated_at: DateTime<Utc>,
